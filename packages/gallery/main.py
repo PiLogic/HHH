@@ -84,7 +84,7 @@ if USE_LOCALHOST:
 else:
     REPO_URL = (
         r"https://cdn.jsdelivr.net/gh/"
-        r"heavenly-hostas-hosting/HHH@data/"
+        r"PiLogic/HHH@data/"
     )
 
 
@@ -441,7 +441,7 @@ async def load_images_from_listing() -> int:
     if USE_LOCALHOST:
         r = await pyfetch("./assets/test-image-listing.json")
     else:
-        r = await pyfetch("https://cj12.matiiss.com/api/artworks")
+        r = await pyfetch("https://localhost/api/artworks")
     data = await r.text()
     n_existing_images = len(IMAGES_LIST)
     for username, img in json.loads(data)["artworks"][n_existing_images:]:
